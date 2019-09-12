@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jm.jutils.NetworkUtil;
+import com.jm.jutils_core.NetworkUtil;
 import com.jm.jutils.R;
 
 public class NetInfoActivity extends AppCompatActivity {

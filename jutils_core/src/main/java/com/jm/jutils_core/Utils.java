@@ -1,4 +1,4 @@
-package com.jm.jutils;
+package com.jm.jutils_core;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.jm.jutils;
+package com.jm.jutils_core;
 
 import android.content.Context;
 import android.content.res.AssetManager;

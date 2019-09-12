@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jm.jutils.DisplayUtils;
+import com.jm.jutils_core.DisplayUtils;
 import com.jm.jutils.R;
 
 public class DisplayInfoActivity extends AppCompatActivity {

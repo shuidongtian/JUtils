@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jm.jutils.R;
-import com.jm.jutils.VoiceUtils;
+import com.jm.jutils_core.VoiceUtils;
 
 public class VoiceActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.jm.jutils;
+package com.jm.jutils_core;
 
 import android.app.Activity;
 import android.content.ContentResolver;

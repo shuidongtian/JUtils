@@ -9,8 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jm.jutils.DeviceInfoUtils;
+
 import com.jm.jutils.R;
+import com.jm.jutils_core.DeviceInfoUtils;
 
 public class DeviceInfoActivity extends AppCompatActivity {
 

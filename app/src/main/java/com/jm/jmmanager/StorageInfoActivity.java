@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jm.jutils.R;
-import com.jm.jutils.SDCardUtils;
-import com.jm.jutils.StorageUtils;
+import com.jm.jutils_core.SDCardUtils;
+import com.jm.jutils_core.StorageUtils;
 
 public class StorageInfoActivity extends AppCompatActivity {
 

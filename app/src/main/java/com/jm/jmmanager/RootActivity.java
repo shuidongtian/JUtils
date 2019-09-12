@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jm.jutils.R;
-import com.jm.jutils.RootUtils;
+import com.jm.jutils_core.RootUtils;
 
 public class RootActivity extends AppCompatActivity {
 

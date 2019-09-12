@@ -1,4 +1,4 @@
-package com.jm.jutils;
+package com.jm.jutils_core;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
@@ -113,8 +113,8 @@ public class SDCardUtils {
                 .getSystemService(Context.STORAGE_SERVICE);
         try {
             Method getPathsMethod = sm.getClass().getMethod("getVolumePaths",
-                    null);
-            String[] path = (String[]) getPathsMethod.invoke(sm, null);
+                    new  Class[ 0 ]);
+            String[] path = (String[]) getPathsMethod.invoke(sm, new  Object[]{});
 
             switch (type) {
                 case INTERNAL_STORAGE:
