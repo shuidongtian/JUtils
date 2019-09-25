@@ -393,10 +393,10 @@ public class NetworkUtil {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             strMac = getLocalMacAddressFromWifiInfo(context);
-            Log.e(TAG, "6.0以下WIFI：" + strMac);
+          //  Log.e(TAG, "6.0以下WIFI：" + strMac);
         } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             strMac = getMacAddress(context);
-            Log.e(TAG, "6.0以上7.0以下WIFI:" + strMac);
+         //   Log.e(TAG, "6.0以上7.0以下WIFI:" + strMac);
         } else {
 //            if (!TextUtils.isEmpty(getMacAddress())) {//wifi和以太网同时存在连接时，会获取第一个ip的mac，不一定wifi的mac
 //                strMac = getMacAddress();
@@ -406,15 +406,15 @@ public class NetworkUtil {
             if(!TextUtils.isEmpty(getMacAddrNew(0))){//优先使用新方法
 
                 strMac = getMacAddrNew(0);
-                Log.e(TAG, "7.0以上1WIFI:" + strMac);
+              //  Log.e(TAG, "7.0以上1WIFI:" + strMac);
             }else if (!TextUtils.isEmpty(getMachineHardwareAddress())) {//手动开或是关一次以太网开关，此时获取的就是以太网的mac，
                 // 如果不动开关，就是wifi的mac
                 strMac = getMachineHardwareAddress();
-                Log.e(TAG, "7.0以上2WIFI:" + strMac);
+           //     Log.e(TAG, "7.0以上2WIFI:" + strMac);
             } else {
                 strMac = getLocalMacAddressFromBusybox();//手动开或是关一次以太网开关，此时获取的就是以太网的mac，
                 // 如果不动开关，就是wifi的mac
-                Log.e(TAG, "7.0以上3WIFI:" + strMac);
+          //      Log.e(TAG, "7.0以上3WIFI:" + strMac);
             }
         }
 
