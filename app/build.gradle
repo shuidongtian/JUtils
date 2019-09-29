@@ -50,6 +50,6 @@ dependencies {
     //implementation project(path: ':jutils_core')
 
 
-    implementation 'com.github.shuidongtian:JUtils:0.1.0'
+    implementation 'com.github.shuidongtian:JUtils:0.1.3'
 
 }
