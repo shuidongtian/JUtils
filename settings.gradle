@@ -1,3 +1,4 @@
+include ':filelibrary'
 include ':pdflibrary'
 include ':app'
 rootProject.name = "JUtils"
