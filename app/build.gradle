@@ -36,6 +36,11 @@ android {
     dataBinding {
         enabled = true
     }
+
+    packagingOptions {
+        exclude 'com/itextpdf/text/pdf/fonts/cmap_info.txt'
+    }
+
 }
 
 dependencies {
@@ -65,5 +70,8 @@ dependencies {
 
 
 
+    //itext
+    implementation group: 'com.itextpdf', name: 'itextpdf', version: '+'
+    implementation group: 'com.itextpdf', name: 'itext-asian', version: '+'
 
 }

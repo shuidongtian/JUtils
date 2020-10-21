@@ -6,13 +6,25 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.letian.jutils.BaseFragment;
 import com.letian.jutils.R;
 import com.letian.jutils.databinding.FragmentPdfBinding;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,6 +88,7 @@ public class PdfFragment extends BaseFragment {
     public void initView() {
 
 
+        testPdf();
     }
 
     @Override
@@ -86,6 +99,45 @@ public class PdfFragment extends BaseFragment {
     @Override
     public boolean onBackPressed() {
         return false;
+    }
+
+
+    public void testPdf(){
+        Document document = new Document();
+        String file = Environment.getExternalStorageDirectory().getPath() + "/Hello.pdf";
+        try {
+            PdfWriter.getInstance(document,new FileOutputStream(file));
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        BaseFont bfChinese = null;
+        try {
+            bfChinese = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H",BaseFont.NOT_EMBEDDED);
+        } catch (DocumentException e) {
+            // Do sth. here
+        } catch (IOException e) {
+            // Do sth. here
+        }
+        Font font = new Font(bfChinese, 16, Font.NORMAL);
+
+
+        document.open();
+        String aa="aaaaaaaa\n";
+        aa+="bbbbbb\r";
+        aa+="ccccc\n";
+        aa+="哈哈\r";
+        aa+="ddddd\r";
+
+        Paragraph p = new Paragraph(aa,font);
+        try {
+            document.add(p);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+        document.close();
+
     }
 
 
