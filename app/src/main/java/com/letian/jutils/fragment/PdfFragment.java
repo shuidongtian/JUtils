@@ -75,6 +75,7 @@ public class PdfFragment extends BaseFragment {
     @Override
     public void initView() {
 
+
     }
 
     @Override

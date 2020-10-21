@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.letian.jutils.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends BaseActivity {
 
     public ActivityMainBinding activityMainBinding;
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
 
     }
 
