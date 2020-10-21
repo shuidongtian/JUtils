@@ -1,13 +1,19 @@
 package com.letian.jutils;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import io.reactivex.functions.Consumer;
 
 /**
  * Activity基类
@@ -30,7 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏
 
-
+        requestPermissions();
     }
 
     public BaseFragment getCurrentFragment() {
@@ -63,5 +69,41 @@ public abstract class BaseActivity extends AppCompatActivity {
                     }
                 getWindow().getDecorView().setSystemUiVisibility(uiFlags);
       }
+
+
+    public void requestPermissions() {
+
+        final RxPermissions rxPermissions = new RxPermissions(BaseActivity.this); // where this is an Activity or Fragment instance
+
+
+        rxPermissions
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.RECEIVE_BOOT_COMPLETED,
+                        Manifest.permission.ACCESS_WIFI_STATE,
+                        Manifest.permission.CHANGE_WIFI_STATE,
+                        Manifest.permission.ACCESS_NETWORK_STATE
+
+                ).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(Boolean granted) throws Exception {
+                if (granted) {
+                    // All requested permissions are granted
+                    Log.e(TAG,"权限通过");
+                    //初始化工作
+//                    init();
+
+                } else {
+                    // At least one permission is denied
+                    Log.e(TAG,"有权限未通过");
+                    Toast.makeText(BaseActivity.this, "有权限未通过", Toast.LENGTH_SHORT).show();
+//                    finish();
+                }
+            }
+        });
+
+    }
+
 
 }

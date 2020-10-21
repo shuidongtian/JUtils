@@ -6,17 +6,16 @@
 
     </data>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.MainFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+      <Button
+          android:id="@+id/btn_2_pdf"
+          android:text="导出pdf"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
 
-    </FrameLayout>
+    </RelativeLayout>
 </layout>
